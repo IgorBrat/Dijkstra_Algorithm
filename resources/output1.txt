@@ -1,0 +1,1 @@
+Minimum max ping: 10
