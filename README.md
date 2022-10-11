@@ -5,11 +5,11 @@ which will minimise the biggest ping to client.
 Server can be placed in every vertex that is not a client.
 
 ## Input data:
-In file `input.txt` which has **M+2** lines:
+In file `gamesrv.in` which has **M+2** lines:
 
 - first line: `N and M` - count of vertexes and edges;
 - second line: `list of natural numbers` - vertexes which are the clients (vertexes are indexed from 1 to N);
 - the next M lines each: `startvertex, endvertex, latency` - latency between two given vertexes.
 
 ## Output data:
-In file `output.txt` has the result ping.
+In file `gamesrv.out` has the result ping.

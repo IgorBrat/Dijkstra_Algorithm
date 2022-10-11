@@ -18,12 +18,5 @@ class Vertex:
     def __hash__(self):
         return hash(int(self.value))
 
-    def __str__(self):
-        return f"V:{self.value}"
-
     def __repr__(self):
-        # res = f"V: {self.value}, neighbours: "
-        # for neighbour, edge_weight in self.get_neighbours():
-        #     res += f"(v: {neighbour.value}, e: {edge_weight}) "
-        # return res
         return f"V:{self.value}"
