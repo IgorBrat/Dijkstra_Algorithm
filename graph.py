@@ -16,23 +16,26 @@ class Graph:
             start_vertex, end_vertex, edge_weight = lines[i + 2].split(" ")
             start = Vertex(int(start_vertex))
             end = Vertex(int(end_vertex))
+            start_in_graph = self.find_vertex(start)
+            end_in_graph = self.find_vertex(end)
             if start not in self.vertexes:
-                start.add_neighbour(end, int(edge_weight))
+                start.add_neighbour(end if not end_in_graph else end_in_graph, int(edge_weight))
                 self.vertexes.append(start)
             else:
                 vertex = self.find_vertex(start)
-                vertex.add_neighbour(end, int(edge_weight))
+                vertex.add_neighbour(end if not end_in_graph else end_in_graph, int(edge_weight))
             if end not in self.vertexes:
-                end.add_neighbour(start, int(edge_weight))
+                end.add_neighbour(start if not start_in_graph else start_in_graph, int(edge_weight))
                 self.vertexes.append(end)
             else:
                 vertex = self.find_vertex(end)
-                vertex.add_neighbour(start, int(edge_weight))
+                vertex.add_neighbour(start if not start_in_graph else start_in_graph, int(edge_weight))
 
     def find_vertex(self, other: Vertex):
         for vertex in self.vertexes:
             if vertex == other:
                 return vertex
+        return None
 
     def print(self):
         for vertex in self.vertexes:

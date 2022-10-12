@@ -18,5 +18,16 @@ class Vertex:
     def __hash__(self):
         return hash(int(self.value))
 
+    def __lt__(self, other):
+        """
+        Override method required for PriorityQueue items comparison when their priorities are equal
+        :param other: Vertex we are comparing with
+        :return: whether this vertex is considered less than the other
+        """
+        return self.value < other.value
+
+    def __gt__(self, other):
+        return self.value > other.value
+
     def __repr__(self):
         return f"V:{self.value}"
