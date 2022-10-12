@@ -18,13 +18,13 @@ class Graph:
             end = Vertex(int(end_vertex))
             start_in_graph = self.find_vertex(start)
             end_in_graph = self.find_vertex(end)
-            if start not in self.vertexes:
+            if not start_in_graph:
                 start.add_neighbour(end if not end_in_graph else end_in_graph, int(edge_weight))
                 self.vertexes.append(start)
             else:
                 vertex = self.find_vertex(start)
                 vertex.add_neighbour(end if not end_in_graph else end_in_graph, int(edge_weight))
-            if end not in self.vertexes:
+            if not end_in_graph:
                 end.add_neighbour(start if not start_in_graph else start_in_graph, int(edge_weight))
                 self.vertexes.append(end)
             else:
